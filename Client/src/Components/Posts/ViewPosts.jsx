@@ -39,6 +39,12 @@ const ViewPosts = ({ allPosts, onDataFromChild, onImageClick, searchTerm }) => {
     onDataFromChild(count);
   };
 
+  const handleLikeButtonClick = async (postId) => {
+    let response = await likePost({ postId }).unwrap();
+    toast.success(response.message);
+    setCount((prevCount) => prevCount + 1);
+  };
+
   useEffect(() => {
     const simulatedData = count;
     sendDataToParent(simulatedData);
@@ -128,11 +134,7 @@ const ViewPosts = ({ allPosts, onDataFromChild, onImageClick, searchTerm }) => {
     commentClicked,
   ]);
 
-  const handleLikeButtonClick = async (postId) => {
-    let response = await likePost({ postId }).unwrap();
-    toast.success(response.message);
-    setCount((prevCount) => prevCount + 1);
-  };
+
 
   const filteredPosts = searchTerm
     ? allPosts.filter((post) =>
