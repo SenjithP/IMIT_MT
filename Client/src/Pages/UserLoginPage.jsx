@@ -48,6 +48,8 @@ const UserLoginPage = () => {
                 </Link>
               </p>
             </div>
+        <p>You can login with <strong>email: user@gmail.com</strong>, <strong>password: User@123</strong></p>
+
           </div>
         </div>
       </section>
