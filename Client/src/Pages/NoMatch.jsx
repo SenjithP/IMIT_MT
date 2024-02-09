@@ -1,4 +1,4 @@
-import pageNotFound from "../assets/images/pageNotFound.jpg"
+import pageNotFound from "../assets/Images/pageNotFound.jpg"
 
 const NoMatch = () => {
   return (
